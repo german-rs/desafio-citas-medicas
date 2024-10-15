@@ -70,6 +70,13 @@
                     <span id="ayuda-hora" class="formulario__ayuda">Seleccione la hora de la consulta.</span>
                 </div>
                 <div class="formulario__campo">
+                    <label
+                        :class="{'colorAlerta': motivo == ''}" 
+                        for="motivo">Motivo</label>
+                    <input v-model="motivo" type="text" name="motivo" id="motivo" aria-required="true" aria-label="Motivo de la consulta" aria-describedby="ayuda-motivo" >
+                    <span id="ayuda-motivo" class="formulario__ayuda">Especifique el motivo de la consulta.</span>
+                </div>
+                <div class="formulario__campo">
                     <label 
                         :class="{'colorAlerta': gravedad == ''}"
                         for="gravedad">Gravedad</label>
@@ -81,13 +88,6 @@
                     </select>
                     <span id="ayuda-gravedad" class="formulario__ayuda">Seleccione el nivel de gravedad del paciente.</span>
                 </div>
-                <div class="formulario__campo">
-                    <label
-                        :class="{'colorAlerta': motivo == ''}" 
-                        for="motivo">Motivo</label>
-                    <input v-model="motivo" type="text" name="motivo" id="motivo" aria-required="true" aria-label="Motivo de la consulta" aria-describedby="ayuda-motivo" >
-                    <span id="ayuda-motivo" class="formulario__ayuda">Especifique el motivo de la consulta.</span>
-                </div>
             </div>
             <div class="formulario__boton">
                 <button
@@ -98,9 +98,10 @@
     </form>
     <section class="consultas__registradas">
         <div class="mensaje__contenedor">
-            <p 
+            <h3 
                 v-show="pacientes.length === 0" 
-                class="colorAlerta">Aún no hay consultas registradas</p>
+                class="colorAlerta"
+            >Aún no hay consultas registradas</h3>
         </div>
 
         <div class="tarjetas">
@@ -125,7 +126,6 @@
     </section>
 </template>
 
-
 <style scoped>
     .formulario__contenedor{
         display: flex;
@@ -137,6 +137,7 @@
         border: 2px solid var(--clr-gray600);
         border-radius: 10px;
     }
+
     .formulario__campo{
         border: 2px solid var(--clr-gray600);
         display: flex;
@@ -149,6 +150,7 @@
         height: 130px;
         border-radius: 10px;
     }
+
     .formulario__grupo{
         display: flex;
         flex-direction: row;
@@ -171,7 +173,6 @@
         height: auto;
         padding: 1em;
         border-radius: 10px;
-
         display: flex;
         flex-direction: column;
     }
@@ -188,9 +189,11 @@
         border-radius: 10px;
         padding: 2em;
     }
+
     .colorAlerta{
-        color:var(--clr-red400);
+        color:var(--clr-red500);
     }
+
     .mensaje__contenedor{
         text-align: center
     }
@@ -198,9 +201,11 @@
     .fondoGravedadBaja{
         background-color: var( --clr-green400);
     }
+    
     .fondoGravedadMedia{
         background-color: var(--clr-yellow400)
     }
+
     .fondoGravedadAlta{
         background-color: var(--clr-red400);
     }

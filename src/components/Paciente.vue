@@ -12,8 +12,6 @@
         <p>{{ fecha }}</p>
         <h3>Hora</h3>
         <p>{{ hora }}</p>
-        <h3>Gravedad</h3>
-        <p>{{ gravedad }}</p>
         <h3>Motivo</h3>
         <p>{{ motivo }}</p>
         <button
