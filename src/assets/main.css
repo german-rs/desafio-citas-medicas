@@ -1,0 +1,49 @@
+@import './base.css';
+
+body{
+    background-color: var(--clr-fondo);
+}
+
+label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+h1{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+input{
+    border: 1px solid var(--clr-gray600);
+    border-radius: 5px;
+}
+
+button{
+    background-color: var(--clr-gray100);
+    padding: 0.5em 1em;
+    border: 2px solid var(--clr-gray900);
+    box-shadow: -3px 2px var(--clr-gray900);
+    transition: all 0.5s ease;
+}
+
+button:hover{
+    background-color: var(--clr-gray900);
+    color: var(--clr-gray100);
+}
+
+button:disabled{
+    background-color: var(--clr-gray100);
+    border: 2px solid var(--clr-gray400);
+    box-shadow: -2px 2px var(--clr-gray400);
+}
+
+button:disabled:hover{
+    background-color: var(--clr-gray100);
+    border: 2px solid var(--clr-gray400);
+    box-shadow: -2px 2px var(--clr-gray400);
+    color: var(--clr-gray600);
+}
+
