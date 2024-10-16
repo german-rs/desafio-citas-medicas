@@ -45,7 +45,7 @@
     }
 </script>
 <template>
-    <form class="formulario" @submit.prevent="agregarPaciente">
+    <form class="formulario" @submit.prevent="agregarPaciente" aria-labelledby="formulario-header" role="form">
         <div class="formulario__contenedor">
             <div class="formulario__grupo">            
                 <div class="formulario__campo">
@@ -96,7 +96,7 @@
             </div>
         </div>
     </form>
-    <section class="consultas__registradas">
+    <section class="consultas__registradas" aria-labelledby="consultas-header">
         <div class="mensaje__contenedor">
             <h3 
                 v-show="pacientes.length === 0" 
@@ -112,7 +112,11 @@
                     'fondoGravedadMedia': paciente.gravedad == 'media',
                     'fondoGravedadAlta': paciente.gravedad == 'alta'    
                 }"
-                v-for="paciente in pacientes" >
+                v-for="paciente in pacientes" 
+                role="region" 
+                :aria-labelledby="'paciente-' + paciente.nombre"
+                aria-live="polite"
+                >
                 <Paciente
                     :nombre="paciente.nombre"
                     :fecha="paciente.fecha"

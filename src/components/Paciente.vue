@@ -5,7 +5,7 @@
     }
 </script>
 <template>
-    <div class="ficha_paciente">
+    <div class="ficha_paciente" :aria-labelledby="'ficha-' + nombre">
         <h3>Paciente</h3>
         <p>{{ nombre }}</p>
         <h3>Fecha</h3>

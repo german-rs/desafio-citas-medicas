@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <span class="material-symbols-outlined header__logo">stethoscope</span>
+    <header role="banner">
+        <span class="material-symbols-outlined header__logo" aria-hidden="true">stethoscope</span>
         <h1>Citas Médicas</h1>
     </header>
 </template>
@@ -18,5 +18,4 @@
         font-size: 2em;
         font-weight: 500;
     }
-
 </style>
